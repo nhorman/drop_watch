@@ -1,5 +1,15 @@
 Thanks for Downloading dropwatch!
 
+How to build on Ubuntu 14.04?
+
+Install dependencies:
+sudo apt-get install -y libnl-3-dev libnl-genl-3-dev binutils-dev libreadline6-dev
+
+Then clone repo, cd to src folder and run make.
+
+And finally run tool:
+./dropwatch -l kas
+
 What is Dropwatch?
 Dropwatch is a project I started in an effort to improve the ability for
 developers and system administrator to diagnose problems in the Linux Networking
