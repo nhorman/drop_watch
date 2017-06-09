@@ -39,7 +39,7 @@ find a bug, open a trac ticket at https://fedorahosted.org/dropwatch/
 
 # How to build on Ubuntu 14.04?
 
-##
+## Dependencies
 
 First of all you need to have CONFIG_NET_DROP_MONITOR enabled in your kernel https://github.com/pavel-odintsov/drop_watch/wiki/Ubuntu-14.04-LTS-kernel-with-drop_monitor-support 
 
