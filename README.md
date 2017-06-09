@@ -1,8 +1,3 @@
-Example screen:
-
-![Screen example](/drop_watch_screen.jpg)
-
-
 # What is Dropwatch?
 Dropwatch is a project I started in an effort to improve the ability for
 developers and system administrator to diagnose problems in the Linux Networking
@@ -27,18 +22,26 @@ dropped packets are not always clear.  Does a UDPInError mean the application
 receive buffer was full, or does it mean its checksum was bad?  Dropwatch
 attempts to disambiguate the causes for dropped packets.
 
-4) Performance.  Utilties can be written to aggregate the data in the various
+* Performance.  Utilties can be written to aggregate the data in the various
 other utilities to solve some of these problems, but such solutions require
 periodic polling of several interfaces, which is far from optimal, especially
 when lost packets are rare.  This solution improves on the performance aspect by
 implementing a kernel feature which allows asyncronous notification of dropped
 packets when they happen.
 
+## Example screen:
+
+![Screen example](/drop_watch_screen.jpg)
+
 Questions
 Feel free to email me directly at nhorman@redhat.com with question, or if you
 find a bug, open a trac ticket at https://fedorahosted.org/dropwatch/
 
 # How to build on Ubuntu 14.04?
+
+##
+
+First of all you need to have CONFIG_NET_DROP_MONITOR enabled in your kernel https://github.com/pavel-odintsov/drop_watch/wiki/Ubuntu-14.04-LTS-kernel-with-drop_monitor-support 
 
 ## Install dependencies:
 ```sudo apt-get install -y libnl-3-dev libnl-genl-3-dev binutils-dev libreadline6-dev```
