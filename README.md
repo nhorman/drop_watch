@@ -1,39 +1,28 @@
 Example screen:
 
-
 ![Screen example](/drop_watch_screen.jpg)
 
 
-How to build on Ubuntu 14.04?
-
-Install dependencies:
-sudo apt-get install -y libnl-3-dev libnl-genl-3-dev binutils-dev libreadline6-dev
-
-Then clone repo, cd to src folder and run make.
-
-And finally run tool:
-./dropwatch -l kas
-
-What is Dropwatch?
+# What is Dropwatch?
 Dropwatch is a project I started in an effort to improve the ability for
 developers and system administrator to diagnose problems in the Linux Networking
 stack, specifically in our ability to diagnose where packets are getting
 dropped.  From my probing, I've come to the conclusion that there are four main
 shortcommings in our current environment:
 
-1) Consolidation, or lack thereof.  Currently, if you would like to check on the
+* Consolidation, or lack thereof.  Currently, if you would like to check on the
 status of dropped packets in the kernel, you need to check at least 3 places,
 and possibly more: The /proc/net/snmp file, the netstat utility, the tc utility,
 and ethool.  This project aims to consolidate several of those checks into one
 tool, making it easier for a sysadmin or developer to detect lost packets
-
-2) Clarity of information.  Dropped packets are not obvious.  a sysadmin needs
+ 
+* Clarity of information.  Dropped packets are not obvious.  a sysadmin needs
 to be intimately familiar with each of the above tools to understand which
 events or statistics correlate to a dropped packet and which do not.  While that
 is often self evident, it is also often not.  Dropwatch aims to improve that
 clarity
 
-3) Ambiguity.  Even when a dropped packet is detected, the causes for those
+* Ambiguity.  Even when a dropped packet is detected, the causes for those
 dropped packets are not always clear.  Does a UDPInError mean the application
 receive buffer was full, or does it mean its checksum was bad?  Dropwatch
 attempts to disambiguate the causes for dropped packets.
@@ -48,4 +37,14 @@ packets when they happen.
 Questions
 Feel free to email me directly at nhorman@redhat.com with question, or if you
 find a bug, open a trac ticket at https://fedorahosted.org/dropwatch/
+
+# How to build on Ubuntu 14.04?
+
+## Install dependencies:
+```sudo apt-get install -y libnl-3-dev libnl-genl-3-dev binutils-dev libreadline6-dev```
+
+Then clone repo, cd to src folder and run make.
+
+And finally run tool:
+```./dropwatch -l kas```
 
