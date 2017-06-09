@@ -1,4 +1,8 @@
-Thanks for Downloading dropwatch!
+Example screen:
+
+
+![Screen example](/drop_watch_screen.jpg)
+
 
 How to build on Ubuntu 14.04?
 
