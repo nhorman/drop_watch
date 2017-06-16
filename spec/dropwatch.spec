@@ -8,9 +8,9 @@ URL: http://fedorahosted.org/dropwatch
 License: GPLv2+ 
 Group: Applications/System 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires: kernel-devel, libnl-devel, readline-devel
-BuildRequires: binutils-devel, binutils-static
-Requires: libnl, readline
+BuildRequires: kernel-devel, libnl3-devel, readline-devel
+BuildRequires: binutils-devel
+Requires: libnl3, readline
 
 %description
 dropwatch is an utility to interface to the kernel to monitor for dropped
@@ -21,7 +21,6 @@ network packets.
 
 %build
 cd src
-export CFLAGS=$RPM_OPT_FLAGS
 make 
 
 %install
@@ -39,7 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{_bindir}/*
 %{_mandir}/man1/*
-%doc README
+%doc README.md
 %doc COPYING
 
 %changelog
